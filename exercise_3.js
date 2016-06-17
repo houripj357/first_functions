@@ -5,13 +5,19 @@
 // freqCounter will hold the information for how many times the character exists in the string.
 // Represent the frequency listing as a Javascript object. Try it with something like charFreq("abbabcbdbabdbdbabababcbcbab").
 
-
-
 function charFreq( string ) {
-	var freqCounter = {};
+    var freqCounter = {};
+    for (var i=0; i<string.length;i++) {
+        var character = string.charAt(i);
+        if (freqCounter[character]) {
+            freqCounter[character]++;
+        } else {
+            freqCounter[character] = 1;
+        }
 
-	}
-	return freqCounter;
+
+    }
+    return freqCounter;
 }
 
 counter = charFreq("abbabcbdbabdbdbabababcbcbab");
@@ -27,6 +33,5 @@ console.log( counter['a'] === 1 );
 console.log( counter['s'] === 1 );
 console.log( counter.d === 1 );
 console.log( counter['f'] === 1 );
-
 
 

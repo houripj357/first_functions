@@ -18,16 +18,29 @@
 
 
 function letterDecoder( codedNumber ) {
+	if (typeof codedNumber != 'number'){
+		return 'Invalid parameter';
+	}
+	
 	var lookUp = 'TRWAGMYFPDXBNJZSQVHLCKE';
 
-	return result;
+	var result = lookUp.charAt(codedNumber % 23 );
+
+	var string = codedNumber.toString();
+
+	
+	if (string.length < 8){
+		return 'Invalid parameter';
+	}
+
+	else{
+		return result;	
+	}
 }
 
 console.log( letterDecoder( 12345678 ) === 'Z');
 console.log( letterDecoder( 34667892 ) === 'S');
 console.log( letterDecoder( 92234488 ) === 'A');
-
-
 
 
 // Part 2
@@ -37,10 +50,9 @@ console.log( letterDecoder( 92234488 ) === 'A');
 // Improve the exercise above to be able to perform this new functionality
 // Of course it has to keep working as usual with right inputs.
 
-/*
 
 console.log( letterDecoder( -1 ) === 'Invalid parameter');
 console.log( letterDecoder( "A1234567" ) === 'Invalid parameter');
 
-*/
+
 
