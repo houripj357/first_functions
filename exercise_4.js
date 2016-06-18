@@ -28,9 +28,17 @@ function deleteRubbish( array )
 {
 	//It receives an array and returns it without '*' chars
 	//Example:  deleteRubbish(['a',1,'*',5]) returns ['a',1,5]
-	
-	new_array = array.splice(0, 0, '*', '');
 
+	var arrayToString = array;
+	arrayToString = arrayToString.join("");
+
+	var string = arrayToString;
+	string = string.replace("*", "");
+
+	var newArray = string;
+	newArray = newArray.split("");
+
+	return newArray;
 }
 
 function arrangeElements( array )
@@ -70,9 +78,8 @@ function arrayToString( array )
 	//It receives an array and returns a string with all its elements.
 	//Example: arrayToString([1, 4, 5, 5, 'A', 'b', 'E', 'j']) returns "1455AbEj"
 
-	var convertedString = array; 
-
-	arrayToString = convertedString.toString();
+	var arrayToString = array;
+	arrayToString = arrayToString.join("");
 
 	return arrayToString;
 }
